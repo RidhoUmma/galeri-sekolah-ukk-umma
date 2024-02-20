@@ -37,7 +37,7 @@ class AuthController extends Controller
 
     public function index()
     {
-        $foto = Foto::orderBy('created_at', 'desc')->paginate(6);
+        $foto = Foto::orderBy('created_at', 'desc')->paginate(4);
         $kategori = KategoriSampul::orderBy('created_at', 'desc')->get();
 
         return view('index', compact('foto', 'kategori'));

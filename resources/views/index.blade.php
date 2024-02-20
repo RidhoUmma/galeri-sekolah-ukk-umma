@@ -27,53 +27,6 @@
 
 TemplateMo 580 Woox Travel
 -->
-    <style>
-        ::-webkit-scrollbar {
-            width: 0px;
-        }
-
-        .overflow {
-            color: white;
-            padding: 15px;
-            height: 190px;
-            overflow: scroll;
-        }
-             .pagination {
-            display: flex;
-            justify-content: center;
-            margin-top: 20px;
-        }
-
-        .pagination .page-item {
-            margin: 0 5px;
-        }
-
-        .pagination .page-link {
-            color: #fff;
-            background-color: #22b3c1;
-            border: 1px solid #22b3c1;
-            padding: 8px 12px;
-            border-radius: 5px;
-            transition: background-color 0.3s, border-color 0.3s, color 0.3s;
-        }
-
-        .pagination .page-link:hover {
-            background-color: #1a8c96;
-            border-color: #1a8c96;
-        }
-
-        .pagination .page-item.active .page-link {
-            background-color: #1a8c96;
-            border-color: #1a8c96;
-        }
-
-        .pagination .page-item.disabled .page-link {
-            color: #6c757d;
-            pointer-events: none;
-            background-color: #f8f9fa;
-            border-color: #dee2e6;
-        }
-    </style>
 
 
 </head>
@@ -230,13 +183,8 @@ TemplateMo 580 Woox Travel
                                 @endforeach
                             </div>
                         </div>
-                        <div class="d-flex justify-content-center mt-4">
-                            {{ $foto->links() }}
-                        </div>
+                        {{ $foto->links() }}
                     </div>
-
-
-
                 </div>
             </div>
         </div>
@@ -259,7 +207,7 @@ TemplateMo 580 Woox Travel
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
-                    {{-- <p>Copyright © 2024 <a href="#">Ridhotul Umma</a> 
+                    {{-- <p>Copyright © 2024 <a href="#">Ridhotul Umma</a>
           <br>Design: <a href="https://templatemo.com" target="_blank" title="free CSS templates">TemplateMo</a></p> --}}
                 </div>
             </div>
