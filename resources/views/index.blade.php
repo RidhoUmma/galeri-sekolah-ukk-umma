@@ -145,7 +145,7 @@ TemplateMo 580 Woox Travel
                 <h1>Galeri Foto</h1>
                 <br>
                 <br>
-                <h3>Filter</h3>
+                <h3>Filter  <i class="fas fa-filter mr-1"></i></h3>
                 <form >
 
                     <div class="form-row align-items-center mb-3">
