@@ -143,7 +143,11 @@ TemplateMo 580 Woox Travel
             <div id="galeri" class="container ">
 
                 <h1>Galeri Foto</h1>
+                <br>
+                <br>
+                <h3>Filter</h3>
                 <form >
+
                     <div class="form-row align-items-center mb-3">
                         <div class="col-auto">
                             <label class="sr-only" for="kategori">Kategori</label>
@@ -154,6 +158,7 @@ TemplateMo 580 Woox Travel
                                 @endforeach
                             </select>
                         </div>
+                        <br>
                         <div class="col-auto">
                             <label class="sr-only" for="tahun">Tahun</label>
                             <select class="form-control" id="tahun" name="tahun">
