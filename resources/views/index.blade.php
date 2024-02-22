@@ -27,7 +27,18 @@
 
 TemplateMo 580 Woox Travel
 -->
+    <style>
+        ::-webkit-scrollbar {
+            width: 0px;
+        }
 
+        .overflow {
+            color: white;
+            padding: 15px;
+            height: 190px;
+            overflow: scroll;
+        }
+    </style>
 
 </head>
 
@@ -132,6 +143,31 @@ TemplateMo 580 Woox Travel
             <div id="galeri" class="container ">
 
                 <h1>Galeri Foto</h1>
+                <form >
+                    <div class="form-row align-items-center mb-3">
+                        <div class="col-auto">
+                            <label class="sr-only" for="kategori">Kategori</label>
+                            <select class="form-control" id="kategori" name="kategori">
+                                <option value="">Pilih Kategori</option>
+                                @foreach($kategori as $kat)
+                                    <option value="{{ $kat->id }}">{{ $kat->nama_kategori }}</option>
+                                @endforeach
+                            </select>
+                        </div>
+                        <div class="col-auto">
+                            <label class="sr-only" for="tahun">Tahun</label>
+                            <select class="form-control" id="tahun" name="tahun">
+                                <option value="">Pilih Tahun</option>
+                                @for ($i = date('Y'); $i >= 2000; $i--)
+                                    <option value="{{ $i }}">{{ $i }}</option>
+                                @endfor
+                            </select>
+                        </div>
+                        {{-- <div class="col-auto">
+                            <button type="submit" class="btn btn-primary">Cari</button>
+                        </div> --}}
+                    </div>
+                </form>
                 <div class="row mt-4">
                     <div class="col-lg-12">
                         <!-- Left Column -->
@@ -183,7 +219,9 @@ TemplateMo 580 Woox Travel
                                 @endforeach
                             </div>
                         </div>
-                        {{ $foto->links() }}
+                        <div>
+                            {{ $foto->links() }}
+                        </div>
                     </div>
                 </div>
             </div>

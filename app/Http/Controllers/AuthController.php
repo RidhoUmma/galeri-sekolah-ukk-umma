@@ -22,7 +22,7 @@ class AuthController extends Controller
     public function detailkategori($id)
     {
         $kategori = KategoriSampul::findOrFail($id);
-        $foto = Foto::where('id_kategori', $id)->get(); // Mengambil foto berdasarkan kategori_id
+        $foto = Foto::where('id_kategori', $id)->get();
         return view('detailkategori', compact('foto', 'kategori'));
     }
 
@@ -35,13 +35,30 @@ class AuthController extends Controller
         return view('detailfoto', compact('foto', 'kategori'));
     }
 
-    public function index()
-    {
-        $foto = Foto::orderBy('created_at', 'desc')->paginate(4);
-        $kategori = KategoriSampul::orderBy('created_at', 'desc')->get();
+    // public function index()
+    // {
+    //     $foto = Foto::orderBy('created_at', 'desc')->paginate(4);
+    //     $kategori = KategoriSampul::orderBy('created_at', 'desc')->get();
 
-        return view('index', compact('foto', 'kategori'));
+    //     return view('index', compact('foto', 'kategori'));
+    // }
+    public function index(Request $request)
+{
+    $foto = Foto::orderBy('created_at', 'desc')->paginate(6);
+    // Filter berdasarkan kategori
+    if ($request->has('kategori')) {
+        $foto->where('kategori_id', $request->kategori);
     }
+
+    // Filter berdasarkan tahun
+    // if ($request->has('tahun')) {
+    //     $foto->whereYear('tgl_foto', $request->tahun);
+    // }
+
+    $kategori = KategoriSampul::orderBy('created_at', 'desc')->get();
+
+    return view('index', compact('foto', 'kategori'));
+}
 
     public function showLoginForm()
     {

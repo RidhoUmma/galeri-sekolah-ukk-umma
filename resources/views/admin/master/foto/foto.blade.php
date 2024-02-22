@@ -39,9 +39,9 @@
                                         <tr>
                                             <th>No</th>
                                             <th>Kategori</th>
-                                            <th>Judul</th>
+                                            <th style="width: 250px;">Judul</th>
                                             <th>Foto</th>
-                                            <th>Keterangan</th>
+                                            <th style="width: 250px;">Keterangan</th>
                                             <th>Tanggal Acara</th>
                                             <th>Action</th>
                                         </tr>
